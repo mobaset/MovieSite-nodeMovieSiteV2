@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+        <!--PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"-->
+        <!--"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>Movie Title</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="/public/css/customStyle.css"/>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"/>
+    <script type="text/javascript" src="/public/js/custom_script.js"/>
+
+</head>
+<body>
+    <header class="custom_container ">
+        <!--logo and movie title with sign in button-->
+
+        <nav class="navbar navbar-default movie_title">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#custome-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" id="title" href="#">Deadpool</a>
+                </div>
+                <div class="collapse navbar-collapse" id="custome-collapse">
+                    <form class="navbar-form navbar-right">
+                        <div class="form-group">
+                            <input type="text" placeholder="Email" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Password" class="form-control"/>
+                        </div>
+                        <button type="submit" class="btn btn-success">Sign in</button>
+                    </form>
+                </div>
+            </div>
+
+        </nav>
+        <!--creatives of the movie (movie image and trailer iframe)-->
+        <div id="movie_graphics">
+            <div id="movie_image">
+                <img class="img-responsive" src="../public/images/deadpool.jpg"/>
+            </div >
+            <div id="movie_trailer" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item"
+                     src="https://www.youtube.com/embed/frRFOrbPfNc">
+                </iframe>
+            </div>
+        </div>
+        <!--content navigation bar-->
+        <nav id="content_navigation">
+            <div class="container">
+                <div id="nav_header">
+                    <ul class="nav nav-pills" id="div_selector">
+                        <li role="presentation" class="active nav_custom_color"><a href="#overview">Movie Overview</a></li>
+                        <li role="presentation"><a href="#cast">Full Cast</a></li>
+                        <!--<li role="presentation"><a href="#ratings">Ratings</a> </li>-->
+                        <li role="presentation"><a href="#similar">Similar Movies</a> </li>
+                        <!--<li role="presentation"><a href="#opinion">Crowd Opinion</a> </li>-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--content area-->
+    <section id="content_area" class="custom_container container">
+
+
+        <!--content sub-area ==> overview-->
+        <div id="overview" class="hidden_div">
+            <div id="movie_details" class="container-fluid">
+                <div id="lead_actor" class="row">
+                    <img id="actor_image" class="col-md-2 img-responsive img-thumbnail" src="../public/images/Ryan%20Reynolds.jpg" alt=""/>
+                    <div id="actor-info" class="col-md-4">
+                        <h4>Lead Actor/Actress: </h4>
+                        <span>
+                            <a href="">Ryan Reynolds</a>
+                        </span>
+                    </div>
+                    <div id="movie_summary" class=" col-md-6">
+                        <h4>Story Line</h4>
+                        <div>
+                            A former Special Forces operative turned mercenary is subjected to a rogue experiment that leaves him with accelerated healing powers, adopting the alter ego Deadpool.
+                        </div>
+                    </div>
+                </div>
+                <div id="more_details" class="row"> <span style="font-size: x-large; text-overflow: ellipsis; text_shadow: 4px 6px 6px 6px rgba(90,90,90,1);">Movie Details</span>
+                    <div>
+                        <h4>Rating:</h4>
+                        <span><a href="">9/10</a> </span>
+                    </div>
+                    <div>
+                        <h4>Genre:</h4>
+                        <span><a href="" >Action</a></span>
+                    </div>
+                    <div>
+                        <h4>Release Date:</h4>
+                        <span><a href="">12 Feb 2016</a></span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!--content sub-area ==> cast-->
+        <div id="cast" class="hidden_div container">
+            <div><p style="font-size: x-large; padding-top: 1em">Cast</p></div>
+            <table id="cast_list" class="container">
+                <tbody>
+                    <tr class="odd">
+                        <td>Ryan Reynolds</td>
+                        <td>...</td>
+                        <td>Wade / Deadpool</td>
+                    </tr>
+                    <tr class="even">
+                        <td>Karan Soni</td>
+                        <td>...</td>
+                        <td>Dopinder</td>
+                    </tr>
+                    <tr class="odd">
+                        <td>Ed Skrein</td>
+                        <td>...</td>
+                        <td>Ajax</td>
+                    </tr>
+                    <tr class="even">
+                        <td>Morena Baccarin</td>
+                        <td>...</td>
+                        <td>Vanessa</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <!--content sub-area ==> ratings-->
+        <!--<div id="ratings" class="hidden_div">-->
+            <!--<div><p>Ratings</p></div>-->
+        <!--</div>-->
+        <!--content sub-area ==> similar-->
+        <div id="similar" class="hidden_div">
+
+        </div>
+        <!--content sub-area ==> opinion-->
+        <!--<div id="opinion" class="hidden_div">-->
+
+        <!--</div>-->
+    </section>
+
+
+
+    <footer>
+        <div class="container foo">
+            <hr></hr>
+            <button type="button" id="validator_button" class="btn btn-info" onclick="window.location.href = 'http://validator.w3.org/check?uri=referer'">HTML Validator!</button>
+        </div>
+
+    </footer>
+
+
+
+</body>
+</html>

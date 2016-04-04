@@ -1,0 +1,72 @@
+
+.Custom-btn-success{
+
+    display:inline-block;
+    padding:6px 12px;
+    margin-bottom:0;
+    font-size:14px;
+    font-weight:400;
+    line-height:1.42857143;
+    text-align:center;
+    white-space:nowrap;
+    vertical-align:middle;
+    border:1px solid transparent;
+    touch-action:manipulation;
+    cursor:pointer;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    background-image:none;
+
+    border-radius:4px;
+    color:#fff;
+    background-color:#28a4c9;
+    border-color:#3c3c3c}
+.Custom-btn-success.focus,.Custom-btn-success:focus
+{color:#fff;
+    background-color:#449d44;
+    border-color:#255625}
+.Custom-btn-success:hover
+{color:#fff;
+    background-color:#d9534f;
+    border-color:#398439}
+.Custom-btn-success.active,.Custom-btn-success:active,.open>.dropdown-toggle.Custom-btn-success
+{color:#fff;background-color:#449d44;border-color:#398439}
+.Custom-btn-success.active.focus,.Custom-btn-success.active:focus,.Custom-btn-success.active:hover,.Custom-btn-success:active.focus,.Custom-btn-success:active:focus,.Custom-btn-success:active:hover,.open>.dropdown-toggle.Custom-btn-success.focus,.open>.dropdown-toggle.Custom-btn-success:focus,.open>.dropdown-toggle.Custom-btn-success:hover
+{color:#fff;
+    background-color:#398439;
+    border-color:#255625}
+.Custom-btn-success.active,.Custom-btn-success:active,.open>.dropdown-toggle.Custom-btn-success{background-image:none}.Custom-btn-success.disabled.focus,.Custom-btn-success.disabled:focus,.Custom-btn-success.disabled:hover,.Custom-btn-success[disabled].focus,.Custom-btn-success[disabled]:focus,.Custom-btn-success[disabled]:hover,fieldset[disabled] .Custom-btn-success.focus,fieldset[disabled] .Custom-btn-success:focus,fieldset[disabled]
+ .Custom-btn-success:hover{  background-color:#5cb85c;
+                                                                                                     border-color:#4cae4c}
+
+.thumbnail > img {
+    margin-right:fill;margin-left:fill;
+    widt:300px; height: 300px
+}
+
+.popup {
+    position:absolute;
+    z-index:2;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s ease;
+}
+
+.show-popup .popup {
+    opacity:1;
+    visibility: visible;
+}
+
+.popup > iframe {
+    position:absolute;
+    top:50px;
+    left:50%;
+    margin-left:-280px;
+}

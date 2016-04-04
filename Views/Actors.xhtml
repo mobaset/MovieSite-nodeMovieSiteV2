@@ -1,0 +1,158 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Actors</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="../public/css/customStyle.css"/>
+    <style type="text/css">
+        header {border-bottom: thin solid gray;height:150px;}
+        #title1 {position: relative;top:50px;}
+        h1#pageTitle {color:black;font-family:Impact,fantasy;left:150px;position:relative }
+        #srcdiv {}
+        #srcNam {width:200px}
+        ul li {display:inline;padding-left: 25px}
+        ul li a:link{ text-decoration:none }
+        ul li a:hover{text-decoration: underline;color:hotpink}
+        ul li a:visited {text-decoration:none; color:blue;}
+        #frame {max-width:750px;height:300px;background-color:white}
+        #poster {width:150px;min-height:200px;border:1px solid black;}
+        #side {float: left;width: 200px }
+        #article{width: 600px;margin-left: 200px}
+        #headLine {border-bottom: thin solid blue}
+        #actorName {position: relative ;bottom: 20px}
+        #titl {left: 250px;position: relative;color: #46b1da;vertical-align: text-bottom ;top: 20px; }
+        #details {position: relative ;}
+        #subNav {position:relative;left:20%}
+        footer {background-color: #e3e2e2;height: 100px;border-top: 1px solid black}
+
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-default movie_title navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Your Favorite Movie Tracker </a>
+            </div>
+            <div class="btn-group">
+                <a role="button" class="btn btn-default" href="HomePage.xhtml">
+                    Home
+                </a>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-default" href="#">
+                    Actors
+                </a>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-default" href="MovieOverview.xhtml">
+                    Overview
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div id="title1">
+        <h1 id="PageTitle">Actors</h1>
+        <div id="srcdiv">
+            <span>choose an actor: </span>
+            <input id ="srcNam" type="text" title="Actor"/>
+            <button id="srcbtn" onclick="getActNam()">Search</button>
+        </div>
+    </div>
+</header>
+<div id="popUp" style="border: solid black 1px;width:320px;height:240px;position: absolute;background-color:white;display:none;z-index:1">
+    <p id="rplcTxt">a</p>
+    <a href="javascript:closePop()" style=" position: absolute  ;right: 5px;bottom: 5px">Cancel</a>
+</div>
+<nav id="content_navigation" >
+    <div class="container">
+        <div id="nav_header">
+            <ul class="nav nav-pills" id="div_selector">
+                <li role="presentation" class="active nav_custom_color"><a href="javascript:chgDtls('overview')">Overview</a></li>
+                <li role="presentation"><a href="javascript:chgDtls('biography')">Biography</a></li>
+                <li role="presentation"><a href="javascript:chgDtls('facts')">Facts</a></li>
+                <li role="presentation"><a href="javascript:chgDtls('movies')">Movies</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id="frame">
+    <div id="side" >
+        <img id="poster" src="../public/images/tom_cruise.jpg" alt="Actor Photo"/>
+    </div>
+    <div id="article" >
+        <div id="headline" style="border-bottom : 1px solid blue; margin-bottom: 10px;margin-top: auto">
+            <h1 id="actorName">Tom Cruise</h1>
+            <!--<h1 id="titl">Overview</h1> -->
+        </div>
+        <!--<div id="details" > -->
+
+        <div class="row">
+
+            <div class="col-xs-8 col-md-8">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3>Overview</h3>
+                        <!--<p>Summary</p> -->
+                        <p>A-list actor and Scientologist Tom Cruise is the star of several box-office hits,
+                            including Risky Business, A Few Good Men, The Firm and Jerry Maguire</p>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- <p>A-list actor and Scientologist Tom Cruise is the star of several box-office hits,
+            including Risky Business, A Few Good Men, The Firm and Jerry Maguire.</p> -->
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div>
+        <a href="http://validator.w3.org/check?uri=referer">
+            <img width="88" height="31" alt="Valid XHTML 1.0!" src="http://www.w3.org/Icons/valid-xhtml10"/>
+        </a>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    function getActNam()  // get the search string string and call getData to get the data from the middleware
+    {
+        showPop(event,"Actors List");
+    }
+    function prnt(dat) {
+        alert(dat);
+    }
+    function showPop(event, text)  // display a popup window
+    {
+
+        var el, x, y;
+
+        el = document.getElementById('popUp');
+        if (window.event) {
+            x = window.event.clientX + document.documentElement.scrollLeft
+                    + document.body.scrollLeft;
+            y = window.event.clientY + document.documentElement.scrollTop +
+                    +document.body.scrollTop;
+        }
+        else {
+            x = event.clientX + window.scrollX;
+            y = event.clientY + window.scrollY;
+        }
+        x -= 220; y += 2;
+        y = y + 15;
+        el.style.left = x + "px";
+        el.style.top = y + "px";
+        el.style.display = "block";
+        document.getElementById('rplcTxt').innerHTML = text;
+    }
+    function closePop() {
+        parent.document.getElementById("popUp").style.display = "none";
+    }
+
+</script>
+
+</body>
+</html>
