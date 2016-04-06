@@ -31,22 +31,22 @@ app.listen(port);
 
 // object to receive data from the movies site API
 
-// var request = require('request');
-// var destination = fs.createWriteStream('./Public/data/moviesdb.json');
-//
-// //getting the data from the the moviedb website
-// //added by Elwaleed 20/03.2016
-// request({
-//     method: 'GET',
-//     url: 'https://api.themoviedb.org/3/movie/550?api_key=f88a673179c88a480ebd3bfd5b852a57&append_to_response=releases,trailers',
-//
-//     headers: {
-//         'Accept': 'application/json'
-//     }},function (error, response, body) {
-//     console.log('Status:', response.statusCode);
-//     console.log('Headers:', JSON.stringify(response.headers));
-//     console.log('Response:', body);
-// }).pipe(destination);
+var request = require('request');
+var destination = fs.createWriteStream('./Public/data/moviesdb.json');
+
+//getting the data from the the moviedb website
+//added by Elwaleed 20/03.2016
+request({
+    method: 'GET',
+    url: 'https://api.themoviedb.org/3/movie/550?api_key=f88a673179c88a480ebd3bfd5b852a57&append_to_response=releases,trailers',
+
+    headers: {
+        'Accept': 'application/json'
+    }},function (error, response, body) {
+    console.log('Status:', response.statusCode);
+    console.log('Headers:', JSON.stringify(response.headers));
+    console.log('Response:', body);
+}).pipe(destination);
 //
 //
 //
