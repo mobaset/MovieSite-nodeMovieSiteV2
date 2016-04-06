@@ -13,7 +13,7 @@ h4 {
     color: #ffbd0b;
 }
 .hidden_div {
-    display: none;
+    /*display: none;*/
     visibility: hidden;
     /*background: #FFB48A;*/
     height: 600px;

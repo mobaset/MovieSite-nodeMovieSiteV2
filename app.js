@@ -27,6 +27,28 @@ app.get('/MovieOverview.xhtml', function (req, res) {
 app.get('/Actors.xhtml', function (req, res) {
     fs.createReadStream(__dirname + '/Views/Actors.xhtml').pipe(res);
 });
+
+//added by Weam
+app.get('/actsearch', function (req, res) {
+    var param = "";
+    if (req.query.p) {
+        param = 'http://api.themoviedb.org/3/search/person?'+apiKey+'&query='+req.query.q+'&page='+req.query.p;
+    }
+    else {
+        param = 'http://api.themoviedb.org/3/search/person?'+apiKey+'&query='+req.query.q;
+    }
+    request.get({url: param,headers: {'Accept':'application/json'}}).pipe(res); //send request to backend service and pipe the response to the client
+});
+
+app.get('/actid', function (req, res) {
+    var param = "http://api.themoviedb.org/3/person/"+req.query.q+"?"+apiKey;
+    request.get({url: param,headers: {'Accept':'application/json'}}).pipe(res);
+});
+
+app.get('/actmovies', function (req, res) {
+    var param = "http://api.themoviedb.org/3/person/"+req.query.q+"/movie_credits?"+apiKey;
+    request.get({url: param,headers: {'Accept':'application/json'}}).pipe(res);
+});
 app.listen(port);
 
 // object to receive data from the movies site API
@@ -47,28 +69,7 @@ request({
     console.log('Headers:', JSON.stringify(response.headers));
     console.log('Response:', body);
 }).pipe(destination);
-//
-//
-//
-//
-// //added by Weam
-// app.get('/actsearch', function (req, res) {
-//     var param = "";
-//     if (req.query.p) {
-//         param = 'http://api.themoviedb.org/3/search/person?'+apiKey+'&query='+req.query.q+'&page='+req.query.p;
-//     }
-//     else {
-//         param = 'http://api.themoviedb.org/3/search/person?'+apiKey+'&query='+req.query.q;
-//     }
-//     request.get({url: param,headers: {'Accept':'application/json'}}).pipe(res); //send request to backend service and pipe the response to the client
-// });
-//
-// app.get('/actid', function (req, res) {
-//     var param = "http://api.themoviedb.org/3/person/"+req.query.q+"?"+apiKey;
-//     request.get({url: param,headers: {'Accept':'application/json'}}).pipe(res);
-// });
-//
-// app.get('/actmovies', function (req, res) {
-//     var param = "http://api.themoviedb.org/3/person/"+req.query.q+"/movie_credits?"+apiKey;
-//     request.get({url: param,headers: {'Accept':'application/json'}}).pipe(res);
-// });
+
+
+
+
