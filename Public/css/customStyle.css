@@ -14,7 +14,7 @@ h4 {
 }
 .hidden_div {
     /*display: none;*/
-    visibility: hidden;
+    /*visibility: hidden;*/
     /*background: #FFB48A;*/
     height: 600px;
     padding: 0;
