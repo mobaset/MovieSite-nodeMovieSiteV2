@@ -6,7 +6,7 @@ var app = express();
 var port = process.env.PORT || 8080; // a variable that stores a dynamic port
 const http = require('http');
 
-// a middleware to grap CSS and JS files
+// a middleware to grab CSS and JS files
 app.use('/public', express.static(__dirname + '/Public'));
 
 // the get method to open the homepage when the url is called.
